@@ -1,3 +1,28 @@
+
+:root{
+    --DarkBlue: #1E1D4A;
+    --Orange: #bc8341;
+    --DarkGrey: #393939;
+    --Beige: #eee6e2;
+    --LightBlue: #5452c5;
+    --BoostMeterBG: #0a091c;
+
+}
+
 .teamName{
-    color:red;
+    font-family: Black Han Sans;
+    font-size:28px;
+    color: var(--Beige);
+    width:267px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    background-color: rgba(61, 59, 144, 0.78);
+}
+
+.right{
+    background-color:rgba(188, 131, 65, 0.78)
 }

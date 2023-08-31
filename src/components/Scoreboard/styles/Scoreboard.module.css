@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Black Han Sans:400');
+
+:root{
+    --DarkBlue: #1E1D4A;
+    --Orange: #bc8341;
+    --DarkGrey: #393939;
+    --Beige: #eee6e2;
+    --LightBlue: #5452c5;
+    --BoostMeterBG: #0a091c;
+}
+
+.scoreboardWrapper{
+    width:720px;
+    height:80px;
+    background-color: var(--Beige);
+    display:flex;
+    flex-direction: row;
+    position: absolute;
+    top:0px;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+
+.vs{
+    top:33%;
+    left:8.5%;
+    text-align: left;
+    font-size:21px;
+    position: relative;
+    transform: rotate(-90deg);
+    font-family: Black Han Sans;
+    color:var(--Beige);
+    margin:0px;
+    padding:0px;
+}
+
+.vsBG{
+    display:inline-block;
+    height:80px;
+    width: 26px;
+    background-color:var(--DarkGrey);
+    box-sizing:border-box;
+    position: relative;
+    outline: 2px solid var(--Beige);
+    outline-offset: -2px;
+    margin-bottom:-1px;
+}

@@ -6,14 +6,16 @@ function App() {
 
   const tempData = {
     leftScore: 10,
-    rightScore: 2
+    rightScore: 2,
+    leftName: "Ohio Northern",
+    rightName: "Other Team"
   }
 
 
 
   return (
     <>
-      <Scoreboard data={tempData}/>
+      <Scoreboard className={styles.scorebug} data={tempData}/>
     </>
   )
 }

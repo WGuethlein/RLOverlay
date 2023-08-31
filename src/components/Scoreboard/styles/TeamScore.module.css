@@ -1,0 +1,29 @@
+
+:root{
+    --DarkBlue: #1E1D4A;
+    --Orange: #bc8341;
+    --DarkGrey: #393939;
+    --Beige: #eee6e2;
+    --LightBlue: #5452c5;
+    --BoostMeterBG: #0a091c;
+}
+
+.score {
+    width:80px;
+    background-color: var(--Beige);
+    color:#393939;
+    font-family:Black Han Sans;
+    font-size:40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    box-shadow:-6px 0px 8px -3px rgba(0,0,0,0.6); /* not really sure why this doesnt need a z-index to match the shadow of the other*/
+}
+
+.right{
+    box-shadow:6px 0px 8px -3px rgba(0,0,0,0.6); 
+    z-index: 5;
+}
