@@ -1,0 +1,40 @@
+:root{
+    --DarkBlue: #1E1D4A;
+    --Orange: #bc8341;
+    --DarkGrey: #393939;
+    --Beige: #eee6e2;
+    --LightBlue: #5452c5;
+    --BoostMeterBG: #0a091c;
+
+}
+
+.outerCircle {
+	background: #ffffff;
+	border-radius: 50%;
+	height:15px;
+	width:15px;
+}
+.innerCircle {
+	position: relative;
+	border-radius: 50%;
+	height:12px;
+	width:12px;
+	margin: 50% 50%;
+    transform: translate(-50%,-50%);
+}
+
+.outerCircle.left{
+    border: 2px solid var(--LightBlue);
+}
+
+.outerCircle.right{
+    border: 2px solid var(--Orange);
+}
+
+.innerCircle.left{
+    background: var(--LightBlue);
+}
+
+.innerCircle.right{
+    background: var(--Orange);
+}

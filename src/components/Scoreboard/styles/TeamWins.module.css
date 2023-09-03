@@ -1,0 +1,18 @@
+.team{
+    width:100px;
+    height:25px;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left{
+    right:453px;
+}
+
+.right{
+    left:453px; /* directly line these up with the edge of the team names */
+}

@@ -8,7 +8,8 @@ function App() {
     leftScore: 10,
     rightScore: 2,
     leftName: "Ohio Northern",
-    rightName: "Other Team"
+    rightName: "Other Team",
+    time: "+88:88"
   }
 
 

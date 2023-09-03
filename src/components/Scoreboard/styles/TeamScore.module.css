@@ -20,7 +20,8 @@
 }
 
 .left{
-    box-shadow:-6px 0px 8px -3px rgba(0,0,0,0.6); /* not really sure why this doesnt need a z-index to match the shadow of the other*/
+    box-shadow:-6px 0px 7px -3px rgba(0,0,0,0.6); /* not really sure why this doesnt need a z-index to match the shadow of the other*/
+    z-index: 1;
 }
 
 .right{

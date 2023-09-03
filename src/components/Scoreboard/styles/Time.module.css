@@ -1,0 +1,24 @@
+:root{
+    --DarkBlue: #1E1D4A;
+    --Orange: #bc8341;
+    --DarkGrey: #393939;
+    --Beige: #eee6e2;
+    --LightBlue: #5452c5;
+    --BoostMeterBG: #0a091c;
+}
+
+.time{
+    position: relative;
+    width:100px;
+    height: 25px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    font-family:Black Han Sans;
+    font-size: 24px;
+    color: var(--DarkGrey);
+    background-color: white;
+    z-index: 0;
+    line-height: 27px;
+    display: flex;
+    justify-content: center;
+}

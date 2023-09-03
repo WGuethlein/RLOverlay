@@ -1,5 +1,8 @@
 import TeamName from './TeamName';
 import TeamScore from './TeamScore';
+import TeamWins from './TeamWins';
+import Time from './Time';
+
 import styles from './styles/Scoreboard.module.css'
 
 
@@ -7,13 +10,20 @@ import styles from './styles/Scoreboard.module.css'
 const Scoreboard = (props) => {
     return (
         <div className={styles.scoreboardWrapper}>
-            <TeamName id="left" name={props.data.leftName}/>
-            <TeamScore id="left" score={props.data.leftScore} />
-            <div className={styles.vsBG}>
-                <div className={styles.vs}>VS</div>
+            <div className={styles.topRow}>
+                <TeamName id="left" name={props.data.leftName}/>
+                <TeamScore id="left" score={props.data.leftScore} />
+                <div className={styles.vsBG}>
+                    <div className={styles.vs}>VS</div>
+                </div>
+                <TeamScore id="right" score={props.data.rightScore} />
+                <TeamName id="right" name={props.data.rightName}/>
             </div>
-            <TeamScore id="right" score={props.data.rightScore} />
-            <TeamName id="right" name={props.data.rightName}/>
+            <div className={styles.bottomRow}>
+                <TeamWins team="left"/>
+                <Time time={props.data.time}/>
+                <TeamWins team="right"/>
+            </div>
         </div>
     )
 }

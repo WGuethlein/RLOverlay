@@ -10,15 +10,17 @@
 }
 
 .scoreboardWrapper{
-    width:720px;
-    height:80px;
-    background-color: var(--Beige);
-    display:flex;
-    flex-direction: row;
-    position: absolute;
     top:0px;
     left: 50%;
     transform: translate(-50%,0%);
+    position: absolute;
+}
+
+.topRow{
+    display:flex;
+    flex-direction: row;
+    width:720px;
+    height:80px;
 }
 
 .vs{
@@ -44,4 +46,12 @@
     outline: 2px solid var(--Beige);
     outline-offset: -2px;
     margin-bottom:-1px;
+}
+
+.bottomRow{
+    height:30px;
+    width:720px;
+    display:flex;
+    flex-direction:row;
+    gap: 0px;
 }
