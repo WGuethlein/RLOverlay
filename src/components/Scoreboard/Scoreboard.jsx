@@ -20,9 +20,9 @@ const Scoreboard = (props) => {
                 <TeamName id="right" name={props.data.rightName}/>
             </div>
             <div className={styles.bottomRow}>
-                <TeamWins team="left"/>
+                <TeamWins team="left" wins={props.data.leftWins} bestOf={props.data.bestOf}/>
                 <Time time={props.data.time}/>
-                <TeamWins team="right"/>
+                <TeamWins team="right" wins={props.data.rightWins} bestOf={props.data.bestOf}/>
             </div>
         </div>
     )

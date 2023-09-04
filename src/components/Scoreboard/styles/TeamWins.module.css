@@ -1,6 +1,5 @@
-.team{
-    width:100px;
-    height:25px;
+.team {
+    height: 25px;
     background-color: white;
     position: absolute;
     display: flex;
@@ -9,10 +8,23 @@
     align-items: center;
 }
 
-.left{
-    right:453px;
+.left {
+    right: 453px;
 }
 
-.right{
-    left:453px; /* directly line these up with the edge of the team names */
+.right {
+    left: 453px;
+    /* directly line these up with the edge of the team names */
+}
+
+.bo7 {
+    width: 90px;
+}
+
+.bo9 {
+    width: 110px;
+}
+
+.bo5 {
+    width: 70px;
 }

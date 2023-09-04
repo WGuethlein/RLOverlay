@@ -9,7 +9,11 @@ function App() {
     rightScore: 2,
     leftName: "Ohio Northern",
     rightName: "Other Team",
-    time: "+88:88"
+    time: "+88:88",
+    gameState: "live",           //used for determining if the game is currently live, replay, not started, or ended
+    bestOf: 9,
+    leftWins: 2,
+    rightWins:2,
   }
 
 

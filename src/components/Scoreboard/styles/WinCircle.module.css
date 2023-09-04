@@ -13,14 +13,14 @@
 	border-radius: 50%;
 	height:15px;
 	width:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .innerCircle {
-	position: relative;
 	border-radius: 50%;
-	height:12px;
-	width:12px;
-	margin: 50% 50%;
-    transform: translate(-50%,-50%);
+	height:13px;
+	width:13px;
 }
 
 .outerCircle.left{
@@ -38,3 +38,4 @@
 .innerCircle.right{
     background: var(--Orange);
 }
+
