@@ -49,7 +49,7 @@ export const parseEvent = (e) => {
                 },
                 2:{
                     name: rightPlayers[2].name,
-                    boost: rightPlayers[2].name,
+                    boost: rightPlayers[2].boost,
                 }
             }
         },

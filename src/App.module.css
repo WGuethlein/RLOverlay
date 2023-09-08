@@ -12,11 +12,24 @@
 #root {
   width: 1920; /* need a fixed screen size */
   height:1080;
+  margin-top:0px;
+  padding: 0px;
+}
+
+body{
+  margin:0px;
+  padding: 0px;
 }
 
 .scorebug{
-  position: absolute;
   top: 0px;
   left:50%;
   transform: translate(0,-50%);
+}
+
+.teams{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1920px;
 }

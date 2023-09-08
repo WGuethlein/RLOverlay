@@ -1,0 +1,53 @@
+:root{
+    --DarkBlue: #1E1D4A;
+    --Orange: #bc8341;
+    --DarkGrey: #393939;
+    --Beige: #eee6e2;
+    --LightBlue: #5452c5;
+    --BoostMeterBG: #0a091c;
+}
+
+.wrapper{
+    height:40px;
+    width:300px;
+    background-color: var(--DarkBlue);
+    font-family: Black Han Sans;
+    font-size: 24px;
+}
+
+.topRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 9px;
+    margin-right:9px;
+}
+
+.boostMeter{
+    width:280px;
+    background-color: white;
+    height:6px;
+    margin-top:-6px;
+}
+
+.boostMeter.right{
+    float:right;
+    background-color: var(--Orange);
+    margin-right:9px;
+}
+
+.bottomRow.right{
+    float:right;
+    margin-right:9px;
+}
+
+.boostMeter.left{
+    float:left;
+    background-color: var(--LightBlue);
+    margin-left:9px;
+}
+
+.bottomRow.left{
+    margin-left:9px;
+    float: left;
+}

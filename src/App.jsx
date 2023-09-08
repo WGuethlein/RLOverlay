@@ -2,6 +2,9 @@ import { useRef, useState, useEffect } from "react";
 import styles from "./App.module.css";
 import Scoreboard from "./components/Scoreboard/Scoreboard";
 import { parseEvent } from "./scripts/parseEvent";
+import ReconnectingWebSocket from "reconnecting-websocket";
+import Team from "./components/Players/Team";
+
 
 function App() {
   // https://stackoverflow.com/a/60161181
@@ -57,13 +60,15 @@ function App() {
     },
   };
 
-  const [data, setData] = useState();
+  const [data, setData] = useState(startData);
   const [isHidden, hideAll] = useState(true);
 
   useEffect(() => {
-    ws.current = new WebSocket("ws://localhost:49122");
+   
+    ws.current = new ReconnectingWebSocket("ws://localhost:49122", [], {maxReconnectionDelay: 1000});
     ws.current.onopen = () => console.log("ws open");
-    ws.current.onclose = () => console.log("ws closed");
+    
+    ws.current.onclose = () => console.log("WS Closed, retrying connection in 1 second")
     ws.current.onerror = (error) => console.log(`Error: ${error}`);
   }, []);
 
@@ -86,6 +91,7 @@ function App() {
     };
   }, [ws]);
 
+  
   return (
     <>
       <Scoreboard
@@ -93,6 +99,10 @@ function App() {
         {...data}
         style={{ visibility: `${isHidden}` }}
       />
+      <div className={styles.teams}>
+        <Team id="left" {...data.leftTeam}/>
+        <Team id="right" {...data.rightTeam}/>
+      </div>
     </>
   );
 }
