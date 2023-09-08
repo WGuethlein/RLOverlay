@@ -1,14 +1,19 @@
-export const parseEvent = (d,e) => {
+import filter from "lodash/filter";
+import get from "lodash/get"
+
+export const parseEvent = (e) => {
     let teamData = e.game.teams
 
     let time = e.game.time_seconds
     let isOT = e.game.isOT
     let roundTime = Math.round(time)
 
-    let activePlayer = _.get(e.data.players, e.data.game.target)
-    let leftPlayers = _.filter(e.data.players, {team: '0'})
-    let rightPlayers = _.filter(e.data.players, {team: '1'})
-
+    let activePlayer = e.game.target ? get(e.players, e.game.target) : ''
+    
+    let leftPlayers = filter(e.players, {team: 0}) 
+    let rightPlayers = filter(e.players, {team: 1}) 
+  
+    
     return{
         gameTime: formatTime(roundTime, isOT),
         bestOf: 7,
@@ -26,7 +31,7 @@ export const parseEvent = (d,e) => {
                 },
                 2:{
                     name: leftPlayers[2].name,
-                    boost: leftPlayers[2].name,
+                    boost: leftPlayers[2].boost,
                 }
             }
         },
