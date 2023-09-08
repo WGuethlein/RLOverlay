@@ -1,3 +1,12 @@
+:root{
+    --DarkBlue: #1E1D4A;
+    --Orange: #bc8341;
+    --DarkGrey: #393939;
+    --Beige: #eee6e2;
+    --LightBlue: #5452c5;
+    --BoostMeterBG: #0a091c;
+}
+
 .team{
     position: relative;
     display: flex;
