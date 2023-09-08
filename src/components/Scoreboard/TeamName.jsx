@@ -10,8 +10,8 @@ const TeamName = (props) =>{
 
     useEffect(() => {
         // storing input name
-        localStorage.setItem('leftTeam', leftTeam);
-        localStorage.setItem('rightTeam', rightTeam)
+        if(props.id == "left") localStorage.setItem('leftTeam', leftTeam);
+        if(props.id == "right") localStorage.setItem('rightTeam', rightTeam);
     }, [leftTeam,rightTeam]);
 
     if(props.id == 'left'){
