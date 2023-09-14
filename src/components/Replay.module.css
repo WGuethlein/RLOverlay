@@ -1,0 +1,14 @@
+.replay{
+    background-color: red;
+    height:80px;
+    width:200px;
+    position: absolute;
+    bottom:20px;
+    left:50%;
+    transform: translate(-50%,0%);
+    font-family: Black Han Sans;
+    font-size:32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

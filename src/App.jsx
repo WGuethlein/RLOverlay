@@ -4,6 +4,8 @@ import Scoreboard from "./components/Scoreboard/Scoreboard";
 import { parseEvent } from "./scripts/parseEvent";
 import ReconnectingWebSocket from "reconnecting-websocket";
 import Team from "./components/Players/Team";
+import ActivePlayer from "./components/ActivePlayer/ActivePlayer";
+import Replay from "./components/Replay";
 
 
 function App() {
@@ -12,62 +14,63 @@ function App() {
   const ws = useRef(null);
 
   let startData = {
-    gameTime: "+88:88",
+    gameTime: "00:00",
     bestOf: 7,
     leftTeam: {
-      name: "Name 1",
-      score: 2,
+      name: "",
+      score: 0,
       players: {
         0: {
-          name: "lp1",
-          boost: 33,
+          name: "",
+          boost: 0,
         },
         1: {
-          name: "lp2",
-          boost: 66,
+          name: "",
+          boost: 0,
         },
         2: {
-          name: "lp3",
-          boost: 100,
+          name: "",
+          boost: 0,
         },
       },
     },
     rightTeam: {
-      name: "Name 2",
-      score: 3,
+      name: "",
+      score: 0,
       players: {
         0: {
-          name: "rp1",
-          boost: 33,
+          name: "",
+          boost: 0,
         },
         1: {
-          name: "rp2",
-          boost: 66,
+          name: "",
+          boost: 0,
         },
         2: {
-          name: "rp3",
-          boost: 100,
+          name: "",
+          boost: 0,
         },
       },
     },
     activePlayer: {
-      name: "lp1",
+      name: "",
       team: 0,
-      goals: 1,
-      shots: 2,
-      assists: 1,
-      score: 200,
+      goals: 0,
+      shots: 0,
+      assists: 0,
+      score: 0,
     },
   };
 
   const [data, setData] = useState(startData);
-  const [isHidden, hideAll] = useState(true);
+  const [isHidden, setIsHidden] = useState(true);
+  const [isReplay, setIsReplay] = useState(false);
 
   useEffect(() => {
-   
-    ws.current = new ReconnectingWebSocket("ws://localhost:49122", [], {maxReconnectionDelay: 1000});
+
+    ws.current = new ReconnectingWebSocket("ws://localhost:49122", [], { maxReconnectionDelay: 1000 });
     ws.current.onopen = () => console.log("ws open");
-    
+
     ws.current.onclose = () => console.log("WS Closed, retrying connection in 1 second")
     ws.current.onerror = (error) => console.log(`Error: ${error}`);
   }, []);
@@ -75,6 +78,7 @@ function App() {
   useEffect(() => {
     ws.current.onmessage = (msg) => {
       var event = JSON.parse(msg.data);
+      console.log(event.event)
       switch (event.event) {
         case "game:update_state":
           setData(parseEvent(event.data));
@@ -83,7 +87,18 @@ function App() {
           break;
         case "game:podium_start":
         case "game:match_ended":
-          hideAll();
+        case "game:clock_stopped":
+          setIsHidden(true);
+          break;
+        case "game:round_started_go":
+          setIsHidden(false);
+          break;
+        case "game:replay_start":
+          setIsHidden(true);
+          setIsReplay(true);
+          break;
+        case "game:replay_end":
+          setIsReplay(false);
           break;
         default:
           break;
@@ -91,7 +106,7 @@ function App() {
     };
   }, [ws]);
 
-  
+
   return (
     <>
       <Scoreboard
@@ -99,10 +114,12 @@ function App() {
         {...data}
         style={{ visibility: `${isHidden}` }}
       />
-      <div className={styles.teams}>
-        <Team id="left" {...data.leftTeam}/>
-        <Team id="right" {...data.rightTeam}/>
-      </div>
+      {isHidden ? '' : <div className={styles.teams}>
+        <Team id="left" {...data.leftTeam} />
+        <Team id="right" {...data.rightTeam} />
+      </div>}
+      {isHidden ? "" : data.activePlayer.name === "" ? "" : data.activePlayer.name === undefined ? '' : <ActivePlayer {...data.activePlayer} />}
+      {isReplay ? <Replay/> : ""}
     </>
   );
 }
