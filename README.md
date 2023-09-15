@@ -6,7 +6,7 @@ This project is a broadcast overlay for Rocket League built using Vite + React. 
 
 ## Installation
 
-  Prerequisits
+  Prerequisites
    - [Rocket League](https://www.rocketleague.com/)
    - [BakkesMod](https://www.bakkesmod.com/)
    - [SOS Overlay Plugin](https://gitlab.com/bakkesplugins/sos/sos-plugin)
@@ -15,7 +15,7 @@ This project is a broadcast overlay for Rocket League built using Vite + React. 
   Optional
    - [SOS Emulator](https://github.com/pharuxtan/sos-emulator)
 
-Assuming all the prerequisits above are installed,
+Assuming all the prerequisites above are installed,
    1. Unzip the package to a known location
    2. In the newly unzipped folder, open cmd or PowerShell, type `npm install`
       - This will install all node packages needed for the site itself.
