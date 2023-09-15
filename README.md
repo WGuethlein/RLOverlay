@@ -22,6 +22,6 @@ This project is a broadcast overlay for Rocket League built using Vite + React. 
 ## Missing Features
  - Ability to read team names from websocket while keeping the manual name entry
  - Full ability to update series score
- -- This feature can be enabled if you are code-savy, but it does not update automatically, series score will need to be updated manually.
+    - This feature can be enabled if you are code-savy, but it does not update automatically, series score will need to be updated manually.
  - Boost Meter for Active Player
  - Statfeed events
