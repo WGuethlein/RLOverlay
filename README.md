@@ -32,8 +32,11 @@ Assuming all the prerequisits above are installed,
    Currently headshot images are hard coded, if the names dont match it will simply not show an image for that player. To edit the hard coded inputs, traverse to [ActivePlayer.jsx](https://github.com/WGuethlein/RLOverlay/blob/main/src/components/ActivePlayer/ActivePlayer.jsx). From there, lines 5-19 are where the hard coded inputs lie. 
 
    ![](https://github.com/WGuethlein/RLOverlay/blob/main/public/noHeadshot.png?raw=true)
+   
    *No Headshot Example*
-   ![] (https://github.com/WGuethlein/RLOverlay/blob/main/public/headshot.png?raw=true)
+   
+   ![](https://github.com/WGuethlein/RLOverlay/blob/main/public/headshot.png?raw=true)
+   
    *Headshot Example*
 
 ## Known Bugs
