@@ -16,3 +16,5 @@ This project is a broadcast overlay for Rocket League built using Vite + React. 
    - [SOS Emulator](https://github.com/pharuxtan/sos-emulator)
 
 //TODO
+## Known Bugs
+ - When writing team names, sometimes the name does not save to local storage causing the names to reset to null on page refresh
