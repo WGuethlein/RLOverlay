@@ -78,7 +78,7 @@ function App() {
   useEffect(() => {
     ws.current.onmessage = (msg) => {
       var event = JSON.parse(msg.data);
-      console.log(event.event)
+      console.log(event)
       switch (event.event) {
         case "game:update_state":
           setData(parseEvent(event.data));
