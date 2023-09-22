@@ -49,3 +49,8 @@ Assuming all the prerequisites above are installed,
  - Boost Meter for Active Player
  - Statfeed events
  - Start script
+
+  ## Future Additions
+  - Connection to Google sheets to update team names, series score, series length
+  - Dedicated backend to move all logic not directly related to UI
+  - Implementation of Redux to make state global
