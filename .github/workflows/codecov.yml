@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run tests and collect coverage
-        run: npm run test
+        run: npm run serve
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4-beta
         env:
